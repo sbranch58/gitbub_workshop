@@ -1,0 +1,30 @@
+---
+title: "GitHub Workshop"
+author: "Your Name"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  html_document: default
+---
+```{r}
+library(ggplot2)
+library(readr)
+library(dplyr)
+```
+
+```{r}
+googleplaystore <- read_csv("Desktop/GitHub_Workshop/googleplaystore.csv")
+```
+
+```{r}
+game <- googleplaystore %>% 
+  group_by(Genres) %>% 
+  summarise(mean = mean(Rating))
+```
+
+
+```{r}
+ggplot(data = googleplaystore, mapping = aes(x= Type)) + 
+  geom_boxplot()
+```
+
