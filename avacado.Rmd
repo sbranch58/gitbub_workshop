@@ -20,6 +20,7 @@ avocado <- avocado %>%
 ggplot(avocado, aes(type, AveragePrice, fill=type)) + geom_boxplot()
 ``` 
 
+# adding graph
 ```{r}
 avocado <- avocado %>% 
   filter(region == "Albany")
