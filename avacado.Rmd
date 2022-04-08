@@ -8,7 +8,7 @@ output:
 ---
 ```{r}
 library(readr)
-avocado <- read_csv("Desktop/GitHub_Workshop/avocado.csv")
+avocado <- read_csv("avocado.csv")
 # View(avocado)
 ```
 
@@ -19,3 +19,13 @@ avocado <- avocado %>%
   filter(region == "Albany")
 ggplot(avocado, aes(type, AveragePrice, fill=type)) + geom_boxplot()
 ``` 
+
+```{r}
+avocado <- avocado %>% 
+  filter(region == "Albany")
+
+ggplot(avocado, aes(x= AveragePrice)) + 
+  geom_histogram(color = "white")+
+  facet_wrap (~type)
+```
+
