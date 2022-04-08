@@ -1,0 +1,21 @@
+---
+title: "Avacado"
+author: "Sarah Branch"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  html_document: default
+---
+```{r}
+library(readr)
+avocado <- read_csv("Desktop/GitHub_Workshop/avocado.csv")
+# View(avocado)
+```
+
+```{r}
+library(tidyverse)
+
+avocado <- avocado %>% 
+  filter(region == "Albany")
+ggplot(avocado, aes(type, AveragePrice, fill=type)) + geom_boxplot()
+``` 
